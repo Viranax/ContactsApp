@@ -42,13 +42,13 @@
             this.birthDateBox = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitВыйтиИзПриложенияAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exit = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addContactСоздатьНовыйКонтактToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editContactРедактироватьТекущийКонтактToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeContactУдалитьТекущийКонтактToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addContact = new System.Windows.Forms.ToolStripMenuItem();
+            this.editContact = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeContact = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutВызватьОкноОПрограммеF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.about = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.ContactsListBox = new System.Windows.Forms.ListBox();
@@ -181,58 +181,59 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitВыйтиИзПриложенияAltF4ToolStripMenuItem});
+            this.exit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // exitВыйтиИзПриложенияAltF4ToolStripMenuItem
+            // exit
             // 
-            this.exitВыйтиИзПриложенияAltF4ToolStripMenuItem.Name = "exitВыйтиИзПриложенияAltF4ToolStripMenuItem";
-            this.exitВыйтиИзПриложенияAltF4ToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
-            this.exitВыйтиИзПриложенияAltF4ToolStripMenuItem.Text = "Exit (Выйти из приложения – Alt+F4)";
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(274, 22);
+            this.exit.Text = "Exit (Выйти из приложения – Alt+F4)";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addContactСоздатьНовыйКонтактToolStripMenuItem,
-            this.editContactРедактироватьТекущийКонтактToolStripMenuItem,
-            this.removeContactУдалитьТекущийКонтактToolStripMenuItem});
+            this.addContact,
+            this.editContact,
+            this.removeContact});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
-            // addContactСоздатьНовыйКонтактToolStripMenuItem
+            // addContact
             // 
-            this.addContactСоздатьНовыйКонтактToolStripMenuItem.Name = "addContactСоздатьНовыйКонтактToolStripMenuItem";
-            this.addContactСоздатьНовыйКонтактToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
-            this.addContactСоздатьНовыйКонтактToolStripMenuItem.Text = "Add Contact (Создать новый контакт)";
+            this.addContact.Name = "addContact";
+            this.addContact.Size = new System.Drawing.Size(326, 22);
+            this.addContact.Text = "Add Contact (Создать новый контакт)";
             // 
-            // editContactРедактироватьТекущийКонтактToolStripMenuItem
+            // editContact
             // 
-            this.editContactРедактироватьТекущийКонтактToolStripMenuItem.Name = "editContactРедактироватьТекущийКонтактToolStripMenuItem";
-            this.editContactРедактироватьТекущийКонтактToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
-            this.editContactРедактироватьТекущийКонтактToolStripMenuItem.Text = "Edit Contact (Редактировать текущий контакт)";
+            this.editContact.Name = "editContact";
+            this.editContact.Size = new System.Drawing.Size(326, 22);
+            this.editContact.Text = "Edit Contact (Редактировать текущий контакт)";
             // 
-            // removeContactУдалитьТекущийКонтактToolStripMenuItem
+            // removeContact
             // 
-            this.removeContactУдалитьТекущийКонтактToolStripMenuItem.Name = "removeContactУдалитьТекущийКонтактToolStripMenuItem";
-            this.removeContactУдалитьТекущийКонтактToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
-            this.removeContactУдалитьТекущийКонтактToolStripMenuItem.Text = "Remove Contact (Удалить текущий контакт)";
+            this.removeContact.Name = "removeContact";
+            this.removeContact.Size = new System.Drawing.Size(326, 22);
+            this.removeContact.Text = "Remove Contact (Удалить текущий контакт)";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutВызватьОкноОПрограммеF1ToolStripMenuItem});
+            this.about});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // aboutВызватьОкноОПрограммеF1ToolStripMenuItem
+            // about
             // 
-            this.aboutВызватьОкноОПрограммеF1ToolStripMenuItem.Name = "aboutВызватьОкноОПрограммеF1ToolStripMenuItem";
-            this.aboutВызватьОкноОПрограммеF1ToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
-            this.aboutВызватьОкноОПрограммеF1ToolStripMenuItem.Text = "About (Вызвать окно «О программе» - F1)";
+            this.about.Name = "about";
+            this.about.Size = new System.Drawing.Size(305, 22);
+            this.about.Text = "About (Вызвать окно «О программе» - F1)";
+            this.about.Click += new System.EventHandler(this.about_Click);
             // 
             // textBox1
             // 
@@ -338,13 +339,13 @@
         private System.Windows.Forms.DateTimePicker birthDateBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitВыйтиИзПриложенияAltF4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exit;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addContactСоздатьНовыйКонтактToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editContactРедактироватьТекущийКонтактToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeContactУдалитьТекущийКонтактToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addContact;
+        private System.Windows.Forms.ToolStripMenuItem editContact;
+        private System.Windows.Forms.ToolStripMenuItem removeContact;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutВызватьОкноОПрограммеF1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem about;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox ContactsListBox;

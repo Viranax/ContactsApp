@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using ContactsApp;
 
@@ -6,7 +7,12 @@ namespace ContactsAppUI
 {
     public partial class MainForm : Form
     {
-       
+        private Project _project = new Project();
+
+        private readonly string _filePath = ProjectManager.FilePath();
+
+        private readonly string _directoryPath = ProjectManager.DirectoryPath();
+
         public MainForm()
         {
             InitializeComponent();
@@ -14,64 +20,26 @@ namespace ContactsAppUI
 
         void MainForm_Load(object sender, EventArgs e)
         {
-            var birthDate = new DateTime(1999, 01, 02);
+            _project = ProjectManager.LoadFromFile(_filePath);
 
-            PhoneNumber phoneNumber = new PhoneNumber
+            if (_project.Contacts.Count == 0)
             {
-                Number = 71234567890
-            };
+                return;
+            }
 
-            Contact contact = new Contact
-            {
-                Surname = "Иванов",
-                Name = "Иван",
-                PhoneNumber = phoneNumber,
-                BirthDate = birthDate,
-                IdVk = "Ivan_Ivan",
-                Email = "Ivan_Ivan@gmail.com"
-            };
-
-            Project project = new Project();
-
-            project.Contacts.Add(contact);
-
-            ProjectManager projectManager = new ProjectManager();
-
-            projectManager.SaveToFile(project);
-
-            project = projectManager.DeserializeProject();
-
-            surnameTextBox.Text = project.Contacts[0].Surname;
-            nameTextBox.Text = project.Contacts[0].Name;
-            phoneTextBox.Text = project.Contacts[0].PhoneNumber.ToString();
-            birthDateBox.Text = project.Contacts[0].BirthDate.ToString();
-            idVkTextBox.Text = project.Contacts[0].IdVk;
-            emailTextBox.Text = project.Contacts[0].Email;
-
-
+            ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            var birthDate = new DateTime(1999, 01, 02);
+            var addcontact = new ContactForm(); 
+            addcontact.ShowDialog(); 
+        }
 
-            PhoneNumber phoneNumber = new PhoneNumber
-            {
-                Number = 71111111111
-            };
-
-            Contact contact = new Contact
-            {
-                Surname = "Test",
-                Name = "Test",
-                PhoneNumber = phoneNumber,
-                BirthDate = birthDate,
-                IdVk = "Test",
-                Email = "Test@gmail.com"
-            };
-
-
-            ContactsListBox.Items.Add(contact.Name);
+        private void about_Click(object sender, EventArgs e)
+        {
+            var about = new AboutForm();
+            about.ShowDialog();
         }
     }
 }
