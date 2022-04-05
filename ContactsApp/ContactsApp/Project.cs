@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace ContactsApp
 {
@@ -14,15 +12,5 @@ namespace ContactsApp
         /// </summary>
         public List<Contact> Contacts = new List<Contact>();
 
-        /// <summary>
-        /// Сортировка листа.
-        /// </summary>
-        /// <param name="contacts"> Лист для сортировки.</param>
-        /// <returns></returns>
-        public List<Contact> SortContacts(List<Contact> contacts)
-        {
-            var sortedContacts = from u in contacts orderby u.Surname select u;
-            return sortedContacts.ToList();
-        }
     }
 }
