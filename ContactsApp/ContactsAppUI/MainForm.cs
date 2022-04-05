@@ -51,6 +51,28 @@ namespace ContactsAppUI
 
         }
 
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            var birthDate = new DateTime(1999, 01, 02);
+
+            PhoneNumber phoneNumber = new PhoneNumber
+            {
+                Number = 71111111111
+            };
+
+            Contact contact = new Contact
+            {
+                Surname = "Test",
+                Name = "Test",
+                PhoneNumber = phoneNumber,
+                BirthDate = birthDate,
+                IdVk = "Test",
+                Email = "Test@gmail.com"
+            };
+
+
+            ContactsListBox.Items.Add(contact.Name);
+        }
     }
 }
 
