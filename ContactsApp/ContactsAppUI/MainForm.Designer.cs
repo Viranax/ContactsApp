@@ -242,6 +242,7 @@
             this.findTextBox.Name = "findTextBox";
             this.findTextBox.Size = new System.Drawing.Size(255, 20);
             this.findTextBox.TabIndex = 15;
+            this.findTextBox.TextChanged += new System.EventHandler(this.findTextBox_TextChanged);
             // 
             // label6
             // 
@@ -260,6 +261,7 @@
             this.ContactsListBox.Name = "ContactsListBox";
             this.ContactsListBox.Size = new System.Drawing.Size(287, 225);
             this.ContactsListBox.TabIndex = 16;
+            this.ContactsListBox.SelectedIndexChanged += new System.EventHandler(this.ContactsListBox_SelectedIndexChanged);
             // 
             // AddButton
             // 

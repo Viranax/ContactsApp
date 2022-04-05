@@ -20,6 +20,9 @@ namespace ContactsAppUI
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Загрузка главной формы.
+        /// </summary>
         void MainForm_Load(object sender, EventArgs e)
         {
             _project = ProjectManager.LoadFromFile(_filePath);
@@ -35,6 +38,9 @@ namespace ContactsAppUI
             ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
         }
 
+        /// <summary>
+        /// Сортировка и вывод контактов.
+        /// </summary>
         private void UpdateContactsList(Contact contact)
         {
             var sortedContacts = new Project();
@@ -54,6 +60,26 @@ namespace ContactsAppUI
             {
                 ClearContactsView();
             }
+        }
+
+
+        /// <summary>
+        /// Вывод данных контакта на главную форму.
+        /// </summary>
+        private void ViewContacts(IReadOnlyList<Contact> contacts)
+        {
+            var index = ContactsListBox.SelectedIndex;
+            if (index == -1)
+            {
+                ClearContactsView();
+                return;
+            }
+            surnameTextBox.Text = contacts[index].Surname;
+            nameTextBox.Text = contacts[index].Name;
+            phoneTextBox.Text = $@"+{contacts[index].PhoneNumber.Number}";
+            emailTextBox.Text = contacts[index].Email;
+            idVkTextBox.Text = contacts[index].IdVk;
+            birthDateBox.Text = contacts[index].BirthDate.ToString("dd.MM.yyyy");
         }
 
         /// <summary>
@@ -79,6 +105,32 @@ namespace ContactsAppUI
         {
             var about = new AboutForm();
             about.ShowDialog();
+        }
+
+
+        /// <summary>
+        /// Поиск контакта с помощью поля поиска.
+        /// </summary>
+        private void findTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (ContactsListBox.SelectedIndex >= 0)
+            {
+                var selectedContact = _viewedContacts[ContactsListBox.SelectedIndex];
+                UpdateContactsList(selectedContact);
+            }
+            else
+            {
+                UpdateContactsList(null);
+            }
+        }
+
+        /// <summary>
+        /// Вывод выбранного контакта.
+        /// </summary>
+        private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var sortContacts = new Project();
+            ViewContacts(sortContacts.SortContacts(findTextBox.Text, _project.Contacts));
         }
     }
 }
