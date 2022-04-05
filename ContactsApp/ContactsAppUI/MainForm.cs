@@ -44,7 +44,7 @@ namespace ContactsAppUI
         private void UpdateContactsList(Contact contact)
         {
             var sortedContacts = new Project();
-            _viewedContacts = sortedContacts.SortContacts(findTextBox.Text, _project.Contacts);
+            _viewedContacts = sortedContacts.SortContacts(FindTextBox.Text, _project.Contacts);
             var index = _viewedContacts.FindIndex(x => x == contact);
             ContactsListBox.Items.Clear();
             foreach (var t in _viewedContacts)
@@ -97,11 +97,20 @@ namespace ContactsAppUI
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            var addcontact = new ContactForm(); 
-            addcontact.ShowDialog(); 
+            var newContact = new Contact { PhoneNumber = new PhoneNumber() };
+            var contactForm = new ContactForm { Contact = newContact };
+            var dialogResult = contactForm.ShowDialog();
+            if (dialogResult != DialogResult.OK)
+            {
+                return;
+            }
+            _project.Contacts.Add(contactForm.Contact);
+            _project.Contacts = _project.SortContacts(_project.Contacts);
+            UpdateContactsList(contactForm.Contact);
+            ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
         }
 
-        private void about_Click(object sender, EventArgs e)
+        private void About_Click(object sender, EventArgs e)
         {
             var about = new AboutForm();
             about.ShowDialog();
@@ -111,7 +120,7 @@ namespace ContactsAppUI
         /// <summary>
         /// Поиск контакта с помощью поля поиска.
         /// </summary>
-        private void findTextBox_TextChanged(object sender, EventArgs e)
+        private void FindTextBox_TextChanged(object sender, EventArgs e)
         {
             if (ContactsListBox.SelectedIndex >= 0)
             {
@@ -130,7 +139,7 @@ namespace ContactsAppUI
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var sortContacts = new Project();
-            ViewContacts(sortContacts.SortContacts(findTextBox.Text, _project.Contacts));
+            ViewContacts(sortContacts.SortContacts(FindTextBox.Text, _project.Contacts));
         }
     }
 }

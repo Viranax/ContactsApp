@@ -48,8 +48,8 @@
             this.editContact = new System.Windows.Forms.ToolStripMenuItem();
             this.removeContact = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.about = new System.Windows.Forms.ToolStripMenuItem();
-            this.findTextBox = new System.Windows.Forms.TextBox();
+            this.About = new System.Windows.Forms.ToolStripMenuItem();
+            this.FindTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.ContactsListBox = new System.Windows.Forms.ListBox();
             this.AddButton = new System.Windows.Forms.Button();
@@ -223,26 +223,26 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.about});
+            this.About});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // about
+            // About
             // 
-            this.about.Name = "about";
-            this.about.Size = new System.Drawing.Size(305, 22);
-            this.about.Text = "About (Вызвать окно «О программе» - F1)";
-            this.about.Click += new System.EventHandler(this.about_Click);
+            this.About.Name = "About";
+            this.About.Size = new System.Drawing.Size(305, 22);
+            this.About.Text = "About (Вызвать окно «О программе» - F1)";
+            this.About.Click += new System.EventHandler(this.About_Click);
             // 
-            // findTextBox
+            // FindTextBox
             // 
-            this.findTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.findTextBox.Location = new System.Drawing.Point(44, 27);
-            this.findTextBox.Name = "findTextBox";
-            this.findTextBox.Size = new System.Drawing.Size(255, 20);
-            this.findTextBox.TabIndex = 15;
-            this.findTextBox.TextChanged += new System.EventHandler(this.findTextBox_TextChanged);
+            this.FindTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FindTextBox.Location = new System.Drawing.Point(44, 27);
+            this.FindTextBox.Name = "FindTextBox";
+            this.FindTextBox.Size = new System.Drawing.Size(255, 20);
+            this.FindTextBox.TabIndex = 15;
+            this.FindTextBox.TextChanged += new System.EventHandler(this.FindTextBox_TextChanged);
             // 
             // label6
             // 
@@ -300,7 +300,7 @@
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ContactsListBox);
-            this.Controls.Add(this.findTextBox);
+            this.Controls.Add(this.FindTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.birthDateBox);
             this.Controls.Add(this.label1);
@@ -347,8 +347,8 @@
         private System.Windows.Forms.ToolStripMenuItem editContact;
         private System.Windows.Forms.ToolStripMenuItem removeContact;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem about;
-        private System.Windows.Forms.TextBox findTextBox;
+        private System.Windows.Forms.ToolStripMenuItem About;
+        private System.Windows.Forms.TextBox FindTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox ContactsListBox;
         private System.Windows.Forms.Button AddButton;
