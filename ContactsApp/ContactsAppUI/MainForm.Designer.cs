@@ -49,7 +49,7 @@
             this.removeContact = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.about = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.findTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.ContactsListBox = new System.Windows.Forms.ListBox();
             this.AddButton = new System.Windows.Forms.Button();
@@ -235,13 +235,13 @@
             this.about.Text = "About (Вызвать окно «О программе» - F1)";
             this.about.Click += new System.EventHandler(this.about_Click);
             // 
-            // textBox1
+            // findTextBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(44, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 20);
-            this.textBox1.TabIndex = 15;
+            this.findTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.findTextBox.Location = new System.Drawing.Point(44, 27);
+            this.findTextBox.Name = "findTextBox";
+            this.findTextBox.Size = new System.Drawing.Size(255, 20);
+            this.findTextBox.TabIndex = 15;
             // 
             // label6
             // 
@@ -298,7 +298,7 @@
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ContactsListBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.findTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.birthDateBox);
             this.Controls.Add(this.label1);
@@ -346,7 +346,7 @@
         private System.Windows.Forms.ToolStripMenuItem removeContact;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem about;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox findTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox ContactsListBox;
         private System.Windows.Forms.Button AddButton;
