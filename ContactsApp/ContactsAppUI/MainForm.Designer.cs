@@ -191,6 +191,7 @@
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(274, 22);
             this.exit.Text = "Exit (Выйти из приложения – Alt+F4)";
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -291,6 +292,7 @@
             this.RemoveButton.TabIndex = 19;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // MainForm
             // 
@@ -318,6 +320,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
             this.Text = "ContactsApp";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_Closed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

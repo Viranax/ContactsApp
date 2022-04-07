@@ -176,6 +176,52 @@ namespace ContactsAppUI
                 ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
             }
         }
+
+        /// <summary>
+        /// Сохранение при выходе из программы.
+        /// </summary>
+        private void MainForm_Closed(object sender, FormClosedEventArgs e)
+        {
+            ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
+        }
+
+        /// <summary>
+        /// Выход из программы через меню.
+        /// </summary>
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        /// <summary>
+        /// Удаление контакта.
+        /// </summary>
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            if (ContactsListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show(@"Select the contact.", @"Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var selectedIndex = ContactsListBox.SelectedIndex;
+                var result = MessageBox.Show($@"Do you really want to delete this contact: 
+                    {_project.Contacts[selectedIndex].Surname}?", @"Confirmation",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                if (result != DialogResult.OK)
+                {
+                    return;
+                }
+                _project.Contacts.RemoveAt(selectedIndex);
+                ContactsListBox.Items.RemoveAt(selectedIndex);
+                ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
+                if (ContactsListBox.Items.Count > 0)
+                {
+                    ContactsListBox.SelectedIndex = 0;
+                }
+            }
+        }
     }
 }
 
