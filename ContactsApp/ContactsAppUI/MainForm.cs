@@ -95,6 +95,9 @@ namespace ContactsAppUI
             birthDateBox.Text = "";
         }
 
+        /// <summary>
+        /// Добавление контакта.
+        /// </summary>
         private void AddButton_Click(object sender, EventArgs e)
         {
             var newContact = new Contact { PhoneNumber = new PhoneNumber() };
@@ -110,6 +113,9 @@ namespace ContactsAppUI
             ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
         }
 
+        /// <summary>
+        /// Вывод окна о программе.
+        /// </summary>
         private void About_Click(object sender, EventArgs e)
         {
             var about = new AboutForm();
@@ -140,6 +146,35 @@ namespace ContactsAppUI
         {
             var sortContacts = new Project();
             ViewContacts(sortContacts.SortContacts(FindTextBox.Text, _project.Contacts));
+        }
+
+        /// <summary>
+        /// Редактирование контакта.
+        /// </summary>
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            if (ContactsListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show(@"Select the contact.", @"Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var sortContacts = new Project();
+                var selectedContact = _viewedContacts[ContactsListBox.SelectedIndex];
+                var contactForm = new ContactForm { Contact = selectedContact };
+                var dialogResult = contactForm.ShowDialog();
+                if (dialogResult != DialogResult.OK)
+                {
+                    return;
+                }
+                var index = _project.Contacts.FindIndex(x => Equals(x, contactForm.Contact));
+                _project.Contacts.RemoveAt(index);
+                _project.Contacts.Insert(index, contactForm.Contact);
+                _project.Contacts = sortContacts.SortContacts(_project.Contacts);
+                UpdateContactsList(contactForm.Contact);
+                ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
+            }
         }
     }
 }
