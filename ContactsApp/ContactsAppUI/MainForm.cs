@@ -7,12 +7,24 @@ namespace ContactsAppUI
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Локальное хранилище контактов.
+        /// </summary>
         private Project _project = new Project();
 
+        /// <summary>
+        /// Путь к файлу.
+        /// </summary>
         private readonly string _filePath = ProjectManager.FilePath();
 
+        /// <summary>
+        /// Путь к папке.
+        /// </summary>
         private readonly string _directoryPath = ProjectManager.DirectoryPath();
 
+        /// <summary>
+        /// Проект для поиска.
+        /// </summary>
         private List<Contact> _viewedContacts = new List<Contact>();
 
         public MainForm()
@@ -96,9 +108,9 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Добавление контакта.
+        /// Метод добавление контакта.
         /// </summary>
-        private void AddButton_Click(object sender, EventArgs e)
+        void AddContact()
         {
             var newContact = new Contact { PhoneNumber = new PhoneNumber() };
             var contactForm = new ContactForm { Contact = newContact };
@@ -111,6 +123,14 @@ namespace ContactsAppUI
             _project.Contacts = _project.SortContacts(_project.Contacts);
             UpdateContactsList(contactForm.Contact);
             ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
+        }
+
+        /// <summary>
+        /// Добавление контакта.
+        /// </summary>
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            AddContact();
         }
 
         /// <summary>
@@ -149,9 +169,9 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Редактирование контакта.
+        /// Метод редактирование контакта.
         /// </summary>
-        private void EditButton_Click(object sender, EventArgs e)
+        void EditContact()
         {
             if (ContactsListBox.SelectedIndex == -1)
             {
@@ -178,6 +198,14 @@ namespace ContactsAppUI
         }
 
         /// <summary>
+        /// Редактирование контакта.
+        /// </summary>
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            EditContact();
+        }
+
+        /// <summary>
         /// Сохранение при выходе из программы.
         /// </summary>
         private void MainForm_Closed(object sender, FormClosedEventArgs e)
@@ -194,9 +222,9 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Удаление контакта.
+        /// Метод удаление контакта.
         /// </summary>
-        private void RemoveButton_Click(object sender, EventArgs e)
+        void DeleteContact()
         {
             if (ContactsListBox.SelectedIndex == -1)
             {
@@ -221,6 +249,38 @@ namespace ContactsAppUI
                     ContactsListBox.SelectedIndex = 0;
                 }
             }
+        }
+
+        /// <summary>
+        /// Удаление контакта.
+        /// </summary>
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            DeleteContact();
+        }
+
+        /// <summary>
+        /// Добавление контакта через меню.
+        /// </summary>
+        private void addContact_Click(object sender, EventArgs e)
+        {
+            AddContact();
+        }
+
+        /// <summary>
+        /// Редактирование контакта через меню.
+        /// </summary>
+        private void editContact_Click(object sender, EventArgs e)
+        {
+            EditContact();
+        }
+
+        /// <summary>
+        /// Удаление контакта через меню.
+        /// </summary>
+        private void removeContact_Click(object sender, EventArgs e)
+        {
+            DeleteContact();
         }
     }
 }

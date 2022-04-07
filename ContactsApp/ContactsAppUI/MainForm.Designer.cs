@@ -208,18 +208,21 @@
             this.addContact.Name = "addContact";
             this.addContact.Size = new System.Drawing.Size(326, 22);
             this.addContact.Text = "Add Contact (Создать новый контакт)";
+            this.addContact.Click += new System.EventHandler(this.addContact_Click);
             // 
             // editContact
             // 
             this.editContact.Name = "editContact";
             this.editContact.Size = new System.Drawing.Size(326, 22);
             this.editContact.Text = "Edit Contact (Редактировать текущий контакт)";
+            this.editContact.Click += new System.EventHandler(this.editContact_Click);
             // 
             // removeContact
             // 
             this.removeContact.Name = "removeContact";
             this.removeContact.Size = new System.Drawing.Size(326, 22);
             this.removeContact.Text = "Remove Contact (Удалить текущий контакт)";
+            this.removeContact.Click += new System.EventHandler(this.removeContact_Click);
             // 
             // helpToolStripMenuItem
             // 
