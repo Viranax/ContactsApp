@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lable1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -269,31 +270,34 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(12, 314);
+            this.AddButton.BackgroundImage = global::ContactsAppUI.Properties.Resources.AddContactButton;
+            this.AddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AddButton.Location = new System.Drawing.Point(12, 311);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 23);
+            this.AddButton.Size = new System.Drawing.Size(33, 33);
             this.AddButton.TabIndex = 17;
-            this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(93, 314);
+            this.EditButton.BackgroundImage = global::ContactsAppUI.Properties.Resources.EditContact;
+            this.EditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.EditButton.Location = new System.Drawing.Point(51, 311);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(75, 23);
+            this.EditButton.Size = new System.Drawing.Size(33, 33);
             this.EditButton.TabIndex = 18;
-            this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(222, 314);
+            this.RemoveButton.BackgroundImage = global::ContactsAppUI.Properties.Resources.DeleteContact;
+            this.RemoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RemoveButton.Location = new System.Drawing.Point(113, 311);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(77, 23);
+            this.RemoveButton.Size = new System.Drawing.Size(33, 33);
             this.RemoveButton.TabIndex = 19;
-            this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
@@ -321,6 +325,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lable1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "ContactsApp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_Closed);

@@ -13,7 +13,7 @@ namespace ContactsAppUI
     {
         private Contact _contact;
         /// <summary>
-        /// Временный проект для добавления или редактирования контакта.
+        /// Контакт.
         /// </summary>
         public Contact Contact
         {
